@@ -6,6 +6,7 @@ UDP Communication: The server uses a DatagramSocket to establish a connectionles
 Packet Reception: The server continuously listens for incoming DatagramPacket objects. When a packet is received, it prints information about the client's IP header, extracts data from the packet, and performs checksum verification.
 
 Checksum Verification: The code uses a simple CRC32 (Cyclic Redundancy Check) algorithm for checksum verification. The verifyChecksum method checks if the received checksum matches the calculated checksum. This helps ensure the integrity of the data received.
+**There are two servers one with checksum validation and other without validation**
 
 Data Processing: The received data is then processed. In this case, the code expects the data to contain a username, candidate name, and checksum. It splits the data into parts and verifies the checksum before proceeding with storing candidate information in a MySQL database.
 
